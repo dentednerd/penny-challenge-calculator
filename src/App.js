@@ -15,7 +15,7 @@ function App() {
       <h1>Penny Challenge Tracker</h1>
       <p>Today is {dayjs(currentDay).format('dddd D MMMM YYYY')}, day {dayCount} of the year so far.</p>
       <p>Today you've added £{(dayCount / 100).toFixed(2)} to your savings.</p>
-      <p>Your current savings so far in {currentYear} are £{currentSavings}.</p>
+      <p>Your current savings so far in {currentYear} are £{currentSavings.toFixed(2)}.</p>
       <p>Today you've reached {goalPercentage}% of your goal!</p>
     </div>
   );
