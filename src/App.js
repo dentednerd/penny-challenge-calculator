@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import dayjs from 'dayjs';
 import './App.css';
+import {
+  dayCount,
+  currentDay,
+  currentYear,
+  currentSavings,
+  goalPercentage
+} from './calculator';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Penny Challenge Tracker</h1>
+      <p>Today is {dayjs(currentDay).format('dddd D MMMM YYYY')}, day {dayCount} of the year so far.</p>
+      <p>Today you've added £{(dayCount / 100).toFixed(2)} to your savings.</p>
+      <p>Your current savings so far in {currentYear} are £{currentSavings}.</p>
+      <p>Today you've reached {goalPercentage}% of your goal!</p>
     </div>
   );
 }
